@@ -279,7 +279,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPrefab: {fileID: 1300554969270748, guid: df8f8f590ed204b41b3edc0871966fd0,
     type: 2}
-  BulletTransform: {fileID: 1924128152}
+  BulletTransformPosition: {fileID: 1924128152}
+  BulletTransformRotation: {fileID: 400958654}
   speed: 2
 --- !u!1 &400958649
 GameObject:
