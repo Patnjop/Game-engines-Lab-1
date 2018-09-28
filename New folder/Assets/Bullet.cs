@@ -5,7 +5,8 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
 
     public GameObject BulletPrefab;
-    public Transform BulletTransform;
+    public Transform BulletTransformPosition;
+    public Transform BulletTransformRotation;
     public float speed = 2;
     // Use this for initialization
     void Start () {
@@ -16,7 +17,7 @@ public class Bullet : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            GameObject clone = Instantiate(BulletPrefab, BulletTransform.position, BulletTransform.rotation);
+            GameObject clone = Instantiate(BulletPrefab, BulletTransformPosition.position, BulletTransformRotation.rotation);
             clone.AddComponent<Rigidbody>().AddForce(Vector3.forward * 1000f);
         }
 	}
