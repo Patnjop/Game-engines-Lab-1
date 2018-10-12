@@ -19,6 +19,7 @@ public class WayPointGeneration : MonoBehaviour {
 
     //UI
     public Text text;
+    public Text text2;
     float angletoplayer;
     string playerinfront;
 
@@ -43,11 +44,10 @@ public class WayPointGeneration : MonoBehaviour {
 	void Update () {
         rotationWaypoint = activeWaypoint + 1;
         angletoplayer = Vector3.SignedAngle(AIPosition.position, playerTank.position, Vector3.up);
-        Debug.Log(angletoplayer);
-        Debug.Log(playerinfront);
         transform.position = Vector3.MoveTowards(AIPosition.position, waypoints[activeWaypoint].transform.position, 0.05f);
 
         text.text = "Player is " + playerinfront;
+        text2.text = "Angle to player is " + angletoplayer;
 
         if (Vector3.Distance(AIPosition.position, waypoints[activeWaypoint].transform.position) < 0.3f)
         {
